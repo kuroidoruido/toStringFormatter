@@ -22,12 +22,17 @@
 	</nav>
 
 	<div class="container">
-		<div class="row" style="height:600px;">
-			<div class="col h-100">
+		<div class="row" style="height:200px;">
+			<div class="col">
 				<textarea class="border-1" id="input"></textarea>
 			</div>
+			<div class="col-2 align-self-center">
+				<button type="button" onclick="handler(event)" class="btn btn-primary">Convert</button>
+			</div>
+		</div>
+		<div class="row" style="padding-top: 50px">
 			<div class="col h-100">
-				<pre class="border-1"  id="output"></pre>
+				<textarea class="border-1" id="output"></textarea>
 			</div>
 		</div>
 	</div><!-- /.container -->

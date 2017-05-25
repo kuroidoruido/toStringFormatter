@@ -83,6 +83,10 @@ var handler = (event) => {
 	$('#output').text(
 		formatToString(
 			input));
+	var nbLine = $('#output').val().match(/\n/g).length;
+	$('#output').css('height',Math.round(1.5*nbLine)+'em');
+	$('#output').show();
 };
 
+$('#output').hide();
 $('#input').change(handler);

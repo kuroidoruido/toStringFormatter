@@ -1,0 +1,3 @@
+Book [title=The Hitchhiker's Guide to the Galaxy, publishedYear=1979-10-12]
+Author [lastname=Douglas, firstname=Adams, birth=1952-03-11, bookWriten=[Book [title=The Hitchhiker's Guide to the Galaxy, publishedYear=1979-10-12], Book [title=The Restaurant at the End of the Universe, publishedYear=1980-10-01], Book [title=Life, the Universe and Everything, publishedYear=1982-08-01], Book [title=So Long, and Thanks for All the Fish, publishedYear=1984-11-01], Book [title=Mostly Harmless, publishedYear=1992-01-01]]]
+BeanThree [propMap={beanTwo1=BeanTwo [propBeanTwo=[BeanOne [propStr1=str1, propInt1=42], BeanOne [propStr1=str2, propInt1=43]]], beanTwo2=BeanTwo [propBeanTwo=[BeanOne [propStr1=str3, propInt1=44], BeanOne [propStr1=str4, propInt1=45]]]}]
