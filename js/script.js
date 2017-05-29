@@ -1,3 +1,6 @@
+$('#pending-indicator').hide();
+$('#output').hide();
+
 function formatToString(input) {
 	var output = "";
 	if(input.length > 3) {
@@ -62,7 +65,6 @@ function correctTextWithComma(str) {
 	}
 	return output;
 }
-
 function replaceSpecialChars(str) {
 	return str.replace(/\t/g,'    ');
 }
@@ -79,14 +81,23 @@ function isUpperCase(ch) {
 }
 
 var handler = (event) => {
+	$('#output').hide();
+	$('#pending-indicator').show();
+
 	var input = $('#input').val();
-	$('#output').text(
-		formatToString(
-			input));
-	var nbLine = $('#output').val().match(/\n/g).length;
-	$('#output').css('height',Math.round(1.5*nbLine)+'em');
-	$('#output').show();
+	
+	new Promise((resolve,reject) => {
+		resolve(formatToString(input));
+	}).then((result) => {
+		$('#output').text(result);
+		
+		$('#output').show();
+		var nbLine = $('#output').val().match(/\n/g).length;
+		$('#output').css('height',Math.round(1.5*nbLine)+'em');
+
+		$('#pending-indicator').hide();
+	});
+	
 };
 
-$('#output').hide();
 $('#input').change(handler);
